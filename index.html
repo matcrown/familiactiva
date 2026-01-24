@@ -24,10 +24,10 @@
         .image-column { width: 100%; background-color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 50%; border: 2mm solid var(--kidom-blue); border-right: none; }
         @media (min-width: 768px) { .image-column { width: 50%; height: 100%; } }
         .image-column-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; }
-        .top-logo-placeholder { max-width: 300px; height: 80px; flex-shrink: 0; margin-bottom: 1rem; }
+        .top-logo-placeholder { max-width: 300px; height: 80px; flex-shrink: 0; margin-bottom: 1rem; display: block !important; }
         .top-logo-placeholder img { width: 100%; height: 100%; object-fit: contain; }
         .image-guide { width: 100%; height: 100%; max-width: 90%; max-height: 48vh; display: flex; align-items: center; justify-content: center; flex-grow: 1; overflow: hidden; }
-        .image-guide img { width: 100%; height: 100%; object-fit: contain; }
+        .image-guide img { width: 100%; height: 100%; object-fit: contain; display: block !important; }
 
         /* VALORES LIDER */
         .bottom-values-container { position: relative; width: 95%; flex-shrink: 0; margin-top: 1rem; padding-bottom: 0.5rem; }
@@ -39,7 +39,7 @@
         .content-column { width: 100%; background-color: var(--kidom-blue); color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; height: 50%; border-top: 2mm solid var(--kidom-yellow-accent); border-right: 2mm solid var(--kidom-yellow-accent); border-bottom: 2mm solid var(--kidom-yellow-accent); position: relative; }
         @media (min-width: 768px) { .content-column { width: 50%; height: 100%; } }
         
-        .logo-placeholder { position: absolute; top: 1rem; right: 1rem; width: 130px; height: 130px; z-index: 15; cursor: pointer; }
+        .logo-placeholder { position: absolute; top: 1rem; right: 1rem; width: 130px; height: 130px; z-index: 15; cursor: pointer; display: block !important; }
         .logo-placeholder img { width: 100%; height: 100%; object-fit: contain;}
         
         .main-content-wrapper { display: flex; flex-direction: column; flex-grow: 1; min-height: 0; }
@@ -66,8 +66,8 @@
         <div class="slide active" data-duration="300">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/h171Kqq.png"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/h171Kqq.png?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 1: Saludo Energético</p>
@@ -100,8 +100,8 @@
         <div class="slide" data-duration="480">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/f1ThAW1.png"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/f1ThAW1.png?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 2: Fundamentos</p>
@@ -134,8 +134,8 @@
         <div class="slide" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/TFQMQkW.png"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/TFQMQkW.png?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 3: El Hito</p>
@@ -168,8 +168,8 @@
         <div class="slide" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/Bv7pzgw.jpeg"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/Bv7pzgw.jpeg?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -182,7 +182,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 4: Mover y Aprender</p>
@@ -202,8 +202,8 @@
         <div class="slide" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/adnYCC9.png"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/adnYCC9.png?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -216,7 +216,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 5: Conexión</p>
@@ -236,8 +236,8 @@
         <div class="slide" data-duration="300">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
-                    <div class="image-guide"><img src="https://i.imgur.com/HJQv653.png"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png?v=1"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/HJQv653.png?v=1"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -250,7 +250,7 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div>
+                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png?v=1"></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
                         <p class="phase-title">Fase 6: Despedida</p>
@@ -305,10 +305,12 @@
         }
 
         function resetTimer() { showSlide(currentSlide); }
+        
         window.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') navigate(1);
             if (e.key === 'ArrowLeft') navigate(-1);
         });
+        
         window.onload = () => showSlide(0);
     </script>
 </body>
