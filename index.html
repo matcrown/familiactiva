@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KiDOM: SEMANA 7 - EL CIRCUITO DE LOS IMPARABLES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
+    <title>KiDOM Sesión: EVENTO ESPECIAL - KiDOM FEST 2026</title>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -13,101 +13,116 @@
             --medium-text: #4B5563; 
         }
 
-        html, body { height: 100%; width: 100%; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; overflow: hidden; background-color: var(--medium-text); }
-        
-        /* Ajuste de Zoom para Televisores grandes */
-        @media screen and (min-width: 1500px) {
-            body { zoom: 1.2; } 
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            background-color: var(--medium-text);
         }
 
-        #slides-container { width: 100%; height: 100%; display: flex; position: relative; }
+        #slides-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+        }
         
-        .slide { flex-shrink: 0; width: 100%; height: 100%; display: none; flex-direction: column; position: relative; overflow: hidden; }
-        @media (min-width: 768px) { .slide { flex-direction: row; } }
+        .slide {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; 
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .slide {
+                flex-direction: row;
+            }
+        }
         .slide.active { display: flex; }
 
-        /* COLUMNA BLANCA */
-        .image-column { width: 100%; background-color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 50%; border: 2mm solid var(--kidom-blue); border-right: none; }
+        /* ----- COLUMNA IZQUIERDA (BLANCA) ----- */
+        .image-column {
+            width: 100%; background-color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; height: 50%; border: 2mm solid var(--kidom-blue); border-right: none;
+        }
         @media (min-width: 768px) { .image-column { width: 50%; height: 100%; } }
-        .image-column-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; }
-        .top-logo-placeholder { max-width: 300px; height: 80px; flex-shrink: 0; margin-bottom: 1rem; }
+
+        .image-column-wrapper {
+            display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative;
+        }
+
+        .top-logo-placeholder { max-width: 300px; height: 80px; flex-shrink: 0; margin-bottom: 1rem; padding-top: 0; }
         .top-logo-placeholder img { width: 100%; height: 100%; object-fit: contain; }
-        .image-guide { width: 100%; height: 100%; max-width: 90%; max-height: 48vh; display: flex; align-items: center; justify-content: center; flex-grow: 1; overflow: hidden; }
+        
+        .image-guide {
+            width: 100%; height: 100%; max-width: 90%; max-height: 48vh; display: flex; align-items: center; justify-content: center; flex-grow: 1; background-color: #FFFFFF; color: var(--kidom-blue); font-weight: 700; border: none; overflow: hidden; margin-top: 0; margin-bottom: 0;
+        }
         .image-guide img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* VALORES LIDER */
-        .bottom-values-container { position: relative; width: 95%; flex-shrink: 0; margin-top: 1rem; padding-bottom: 0.5rem; }
-        .value-line { display: flex; justify-content: center; flex-wrap: nowrap; gap: 0.5rem; }
-        .value-item { font-weight: 700; color: var(--medium-text); font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; }
-        .lider-letter { background-color: var(--medium-text); color: #FFFFFF; font-weight: 900; font-size: 0.8rem; border-radius: 50%; width: 1.5rem; height: 1.5rem; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.2rem; flex-shrink: 0;}
+        .bottom-values-container { 
+            position: relative; width: 90%; flex-shrink: 0; margin-top: 1rem; padding-bottom: 0.5rem;
+        }
+        .value-line { display: flex; justify-content: center; flex-wrap: nowrap; gap: 0.75rem; }
+        .value-item { font-weight: 700; color: var(--medium-text); font-size: 0.84rem; text-transform: uppercase;}
+        .lider-letter { background-color: var(--medium-text); color: #FFFFFF; font-weight: 900; font-size: 0.875rem; border-radius: 50%; width: 1.75rem; height: 1.75rem; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.25rem; flex-shrink: 0;}
 
-        /* COLUMNA AZUL */
-        .content-column { width: 100%; background-color: var(--kidom-blue); color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; height: 50%; border-top: 2mm solid var(--kidom-yellow-accent); border-right: 2mm solid var(--kidom-yellow-accent); border-bottom: 2mm solid var(--kidom-yellow-accent); position: relative; }
+        /* ----- COLUMNA DERECHA (AZUL KiDOM) ----- */
+        .content-column {
+            width: 100%; background-color: var(--kidom-blue); color: #FFFFFF; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; height: 50%; border-top: 2mm solid var(--kidom-yellow-accent); border-right: 2mm solid var(--kidom-yellow-accent); border-bottom: 2mm solid var(--kidom-yellow-accent); border-left: none;
+        }
         @media (min-width: 768px) { .content-column { width: 50%; height: 100%; } }
-        
-        .logo-placeholder { position: absolute; top: 1rem; right: 1rem; width: 130px; height: 130px; z-index: 15; cursor: pointer; }
+
+        .logo-container { flex-shrink: 0; margin-bottom: 0.5rem; position: relative; height: auto; min-height: 50px; padding-top: 0; } 
+        .logo-placeholder { position: absolute; top: -3.25rem; right: -3.75rem; width: 142px; height: 142px; z-index: 15; padding-top: 1rem; padding-right: 1rem; box-sizing: border-box; cursor: pointer;}
         .logo-placeholder img { width: 100%; height: 100%; object-fit: contain;}
         
-        .main-content-wrapper { display: flex; flex-direction: column; flex-grow: 1; min-height: 0; }
-        .content-header-area { padding-top: 1.5rem; flex-shrink: 0; }
-        .phase-title { color: #FFFFFF; font-size: 1.1rem; font-weight: 700; opacity: 0.9; margin-bottom: 0; }
-        .activity-title { color: #FFFFFF; font-size: 2.2rem; line-height: 1; font-weight: 900; margin: 0.3rem 0; text-transform: uppercase; }
-        .group-name-display { color: var(--kidom-yellow-accent); font-size: 1.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.2rem; } 
+        .main-content-wrapper { display: flex; flex-direction: column; flex-grow: 1; min-height: 0; margin-top: 0; padding-bottom: 0; }
+        .content-header-area { padding-top: 2.5rem; margin-bottom: 0; padding-bottom: 0; flex-shrink: 0; }
+        .phase-title { color: #FFFFFF; font-size: 1.125rem; font-weight: 700; opacity: 0.8; margin-bottom: 0; }
+        .activity-title { 
+            color: #FFFFFF; font-size: 1.925rem; line-height: 1.1; font-weight: 900; 
+            margin-bottom: 0; padding-bottom: 0; margin-top: 0; 
+        }
+        .group-name-display { color: var(--kidom-yellow-accent); font-size: 1.75rem; font-weight: 700; line-height: 1; text-transform: uppercase; margin-top: 0.25rem; margin-bottom: 2rem; } 
         
-        .instructions-list { text-align: left; font-size: 1.3rem; color: #F3F4F6; list-style: none; padding: 0; overflow-y: auto; flex-grow: 1; }
-        .instructions-list li { margin-bottom: 1.4rem; }
-        .list-title { display: flex; align-items: center; font-weight: 900; color: #FFFFFF; margin-bottom: 0.4rem; text-transform: uppercase; }
-        .list-icon { margin-right: 0.7rem; font-size: 1.5rem; color: var(--kidom-yellow-accent); }
-        .list-text { padding-left: 2.3rem; line-height: 1.3; font-weight: 400; }
+        .instructions-list { 
+            text-align: left; font-size: 1.4rem; color: #F3F4F6; list-style: none; padding-left: 0; overflow-y: auto; flex-grow: 1; margin-top: 0;
+        }
+        .instructions-list li { margin-bottom: 1rem; }
+        .list-title { display: flex; align-items: center; font-weight: 700; color: #FFFFFF; }
+        .list-icon { margin-right: 0.75rem; font-size: 1.5rem; color: var(--kidom-yellow-accent); flex-shrink: 0; }
+        .list-text { padding-left: 2.5rem; color: #F3F4F6; font-weight: 400; }
 
-        .content-bottom { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 1rem; }
-        .timer-display { font-family: 'Raleway', sans-serif; font-weight: 900; color: var(--kidom-yellow-accent); font-size: 5.5rem; line-height: 1; font-variant-numeric: tabular-nums; }
-        .navigation-buttons { display: flex; gap: 0.8rem; }
-        .nav-button { background-color: #FFFFFF; color: var(--kidom-blue); font-weight: 900; font-size: 1.1rem; padding: 0.8rem 1.5rem; border-radius: 0.6rem; cursor: pointer; border: none; text-transform: uppercase; }
+        .content-bottom { display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding-top: 1rem; flex-shrink: 0; }
+        .timer-display { 
+    font-family: 'Raleway', sans-serif !important; 
+    font-weight: 800; 
+    color: var(--kidom-yellow-accent); 
+    font-size: 6rem; 
+    line-height: 1;
+    font-variant-numeric: tabular-nums; 
+}
+        }
+        .navigation-buttons { display: flex; gap: 0.5rem; }
+        .nav-button { background-color: #FFFFFF; color: var(--kidom-blue); font-weight: 700; font-size: 1.125rem; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: none;}
+        .nav-button:disabled { opacity: 0.5; cursor: not-allowed; }
     </style>
 </head>
 <body>
 
     <div id="slides-container">
-        <div class="slide active" data-duration="300">
-            <div class="image-column">
-                <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="bottom-values-container">
-                        <div class="value-line">
-                            <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
-                            <span class="value-item"><span class="lider-letter">I</span>ntegridad</span>
-                            <span class="value-item"><span class="lider-letter">D</span>isciplina</span>
-                            <span class="value-item"><span class="lider-letter">E</span>mpatía</span>
-                            <span class="value-item"><span class="lider-letter">R</span>esponsabilidad</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/AaXtuPb.png"></div>
-                <div class="main-content-wrapper">
-                    <div class="content-header-area">
-                        <p class="phase-title">Fase 1: Saludo Energético</p>
-                        <h3 class="activity-title">RADAR DE COLORES PRO</h3>
-                        <p class="group-name-display">IMPARABLES - S7</p>
-                    </div>
-                    <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">Coach grita un color. Padre corre a tocar el platillo y vuelve. High-five con el niño, y el niño corre a colocar la pelota del color correspondiente sobre el platillo.</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"¡Papás, activen el motor! Niños, ¡lleven la energía al objetivo! ¡AZUL!"</div></li>
-                        <li><div class="list-title"><span class="list-icon">💡</span> PNL:</div><div class="list-text">"La velocidad de respuesta es la clave para dominar cualquier desafío."</div></li>
-                    </ul>
-                </div>
-                <div class="content-bottom"><div class="timer-display">05:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(1)">Sig</button></div></div>
-            </div>
-        </div>
 
-        <div class="slide" data-duration="480">
+        <div class="slide active" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img srchttps://i.imgur.com/zalLgCd.png"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -120,28 +135,43 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
-                        <p class="phase-title">Fase 2: Fundamentos</p>
-                        <h3 class="activity-title">MURO DE LANZAMIENTO</h3>
-                        <p class="group-name-display">POTENCIA Y PRECISIÓN</p>
+                        <h2 class="phase-title">Fase 1 de 8: Apertura Masiva</h2>
+                        <h3 class="activity-title">GLADIADORES TITANES</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
                     </div>
                     <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">Circuito de platillos. El niño lleva la pelota en zigzag. Se la pasa al padre que está haciendo Burpees. El padre recibe y lanza la pelota a través de una llanta a 5m.</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"¡Precisión bajo presión! Papás, no dejen de moverse. ¡Encuentren el centro de la llanta!"</div></li>
-                        <li><div class="list-title"><span class="list-icon">💡</span> PNL:</div><div class="list-text">"Incluso cuando el cuerpo está cansado, la mente debe mantener el enfoque en la meta."</div></li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Bienvenidos Titanes! Entren en estocadas con sus hijos en hombros. Al centro, papás en plancha circular... ¡Niños, a saltar sobre sus héroes! ¡3, 2, 1, KiDOM!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Miren esa base sólida! Papás, su resistencia hoy es el ejemplo de estabilidad de sus hijos mañana. ¡Son invencibles!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(2 KC)** Grito de Unidad: Por participar con energía máxima en el saludo inicial.</div>
+                        </li>
                     </ul>
                 </div>
-                <div class="content-bottom"><div class="timer-display">08:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(-1)">Ant</button><button class="nav-button" onclick="navigate(1)">Sig</button></div></div>
+                <div class="content-bottom">
+                    <div class="timer-display">10:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)" disabled>Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="slide" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/R5xPWeW.png"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -154,28 +184,190 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
-                        <p class="phase-title">Fase 3: El Hito</p>
-                        <h3 class="activity-title">EL CARRETILLO DE HIERRO</h3>
-                        <p class="group-name-display">POTENCIA EXPLOSIVA</p>
+                        <h2 class="phase-title">Fase 2 de 8: Calentamiento Agresivo</h2>
+                        <h3 class="activity-title">CAZA-TOBILLOS FEST</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
                     </div>
                     <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">1. Carretilla: Padre sostiene pies del niño y avanzan 5m. 2. Regreso de Poder: El padre carga al niño en hombros y regresa con un esprint máximo. ¡5 vueltas!</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"¡Fuerza en esos brazos, equipo! Papás, ¡demuestren la potencia en ese regreso! ¡Nadie se detiene!"</div></li>
-                        <li><div class="list-title"><span class="list-icon">💡</span> PNL:</div><div class="list-text">"La Resiliencia se construye en la última repetición, cuando crees que ya no puedes más."</div></li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Papás, protejan sus tobillos! Niños, ¡ataquen con velocidad! Desplazamientos laterales constantes cargando a su hijo. ¡Nadie se queda quieto!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Reflejos de tigre! Veo padres protegiendo el legado y niños con un foco inquebrantable. ¡Eso es agilidad mental!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(2 KC)** Agilidad Extrema: Por mantener el movimiento lateral sin bajar al niño.</div>
+                        </li>
                     </ul>
                 </div>
-                <div class="content-bottom"><div class="timer-display">10:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(-1)">Ant</button><button class="nav-button" onclick="navigate(1)">Sig</button></div></div>
+                <div class="content-bottom">
+                    <div class="timer-display">10:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-duration="900">
+            <div class="image-column">
+                <div class="image-column-wrapper">
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/FEJRFV7.png"></div>
+                    <div class="bottom-values-container">
+                        <div class="value-line">
+                            <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
+                            <span class="value-item"><span class="lider-letter">I</span>ntegridad</span>
+                            <span class="value-item"><span class="lider-letter">D</span>isciplina</span>
+                            <span class="value-item"><span class="lider-letter">E</span>mpatía</span>
+                            <span class="value-item"><span class="lider-letter">R</span>esponsabilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column">
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
+                <div class="main-content-wrapper">
+                    <div class="content-header-area">
+                        <h2 class="phase-title">Fase 3 de 8: Estaciones de Poder</h2>
+                        <h3 class="activity-title">TENSIÓN ISOMÉTRICA</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
+                    </div>
+                    <ul class="instructions-list">
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Papás, contra la pared en sentadilla! No se muevan. Niños, corran por las pelotas, ¡solo pueden entregarlas si papá resiste la tensión!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Disciplina es hacer lo que toca aunque ardan los músculos! Miren esa fuerza, ¡sus hijos están orgullosos!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(3 KC)** Muro de Acero: Por no romper la sentadilla durante toda la estación.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-bottom">
+                    <div class="timer-display">15:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-duration="900">
+            <div class="image-column">
+                <div class="image-column-wrapper">
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/xEL1SKt.png"></div>
+                    <div class="bottom-values-container">
+                        <div class="value-line">
+                            <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
+                            <span class="value-item"><span class="lider-letter">I</span>ntegridad</span>
+                            <span class="value-item"><span class="lider-letter">D</span>isciplina</span>
+                            <span class="value-item"><span class="lider-letter">E</span>mpatía</span>
+                            <span class="value-item"><span class="lider-letter">R</span>esponsabilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column">
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
+                <div class="main-content-wrapper">
+                    <div class="content-header-area">
+                        <h2 class="phase-title">Fase 4 de 8: Derby de Gigantes</h2>
+                        <h3 class="activity-title">CARRERA DE CARROZAS</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
+                    </div>
+                    <ul class="instructions-list">
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Papás a cuatro patas! Niños arriba. Carrera de obstáculos masiva. ¡Core fuerte, hombros arriba! ¡A la cuenta de 3, arranquen!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Eso es trabajo en equipo! El motor y el piloto en perfecta sincronía. ¡Integridad en cada movimiento!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(3 KC)** Motor Imparable: Por completar el circuito sin que el piloto caiga.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-bottom">
+                    <div class="timer-display">15:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-duration="900">
+            <div class="image-column">
+                <div class="image-column-wrapper">
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/EIYAhIJ.png"></div>
+                    <div class="bottom-values-container">
+                        <div class="value-line">
+                            <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
+                            <span class="value-item"><span class="lider-letter">I</span>ntegridad</span>
+                            <span class="value-item"><span class="lider-letter">D</span>isciplina</span>
+                            <span class="value-item"><span class="lider-letter">E</span>mpatía</span>
+                            <span class="value-item"><span class="lider-letter">R</span>esponsabilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-column">
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
+                <div class="main-content-wrapper">
+                    <div class="content-header-area">
+                        <h2 class="phase-title">Fase 5 de 8: Hito FEST Masivo</h2>
+                        <h3 class="activity-title">RELEVOS DE HIERRO</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
+                    </div>
+                    <ul class="instructions-list">
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Sinergia total! En equipos de 10, pasen a todos los niños al otro lado. ¡Prohibido que los pies de los niños toquen el suelo!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Responsabilidad compartida! Si uno falla, el equipo lo apoya. ¡Miren cómo vuela el futuro en sus manos!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(5 KC)** Sinergia Maestra: Por completar el relevo masivo con éxito grupal.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-bottom">
+                    <div class="timer-display">15:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="slide" data-duration="600">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/7WyBBpZ.png"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -188,28 +380,43 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
-                        <p class="phase-title">Fase 4: Mover y Aprender</p>
-                        <h3 class="activity-title">BÚSQUEDA LIDER</h3>
-                        <p class="group-name-display">CÓDIGO KIDOM</p>
+                        <h2 class="phase-title">Fase 6 de 8: Mover y Aprender</h2>
+                        <h3 class="activity-title">RALLY KIDOM 📸</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
                     </div>
                     <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">Padre hace sentadilla profunda para levantar platillos. Si encuentra la pelota con la letra LIDER que el niño busca, el niño corre a llevarla a la pizarra.</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"¡A por las letras! Cada sentadilla es una oportunidad de encontrar el valor del día. ¡Formen la palabra DISCIPLINA!"</div></li>
-                        <li><div class="list-title"><span class="list-icon">💡</span> PNL:</div><div class="list-text">"El conocimiento solo se graba cuando el cuerpo y la mente trabajan en armonía."</div></li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Abran bien los ojos! Miren la foto en pantalla... ¡Carguen a su hijo y corran a ese lugar del gimnasio! ¡El último en llegar hace 10 saltos de potencia!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Esa es agudeza visual! Ubicarse rápido bajo presión entrena la toma de decisiones. ¡Buen trabajo, equipo!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(2 KC)** Explorador KiDOM: Por identificar correctamente los 3 puntos del rally.</div>
+                        </li>
                     </ul>
                 </div>
-                <div class="content-bottom"><div class="timer-display">10:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(-1)">Ant</button><button class="nav-button" onclick="navigate(1)">Sig</button></div></div>
+                <div class="content-bottom">
+                    <div class="timer-display">10:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="slide" data-duration="600">
+        <div class="slide" data-duration="900">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src=https://i.imgur.com/MjE6zf0.png"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -222,28 +429,43 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
-                        <p class="phase-title">Fase 5: Conexión</p>
-                        <h3 class="activity-title">EL LATIDO DEL FUTURO</h3>
-                        <p class="group-name-display">VISUALIZACIÓN PROFUNDA</p>
+                        <h2 class="phase-title">Fase 7 de 8: El Legado del Titán</h2>
+                        <h3 class="activity-title">LA CARTA AL FUTURO</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
                     </div>
                     <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">Sentados frente a frente, manos en el corazón del otro. Coach guía visualización de 10 min sobre el éxito del niño a futuro.</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"Papá, cierra los ojos. Imagina a ese niño que tienes enfrente, pero con 25 años... es un líder, es fuerte, es íntegro. Siente su latido y recuerda: cada gota de sudor de hoy es la raíz de su seguridad mañana."</div></li>
-                        <li><div class="list-title"><span class="list-icon">💡</span> PNL:</div><div class="list-text">"La conexión emocional es el combustible que hace que el esfuerzo valga la pena."</div></li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">Papá, escribe una promesa al 'Hijo del 2046'. Niño, traza la mano de papá en el papel. Abrácense fuerte... sientan ese escudo inquebrantable.</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Empatía pura! Su esfuerzo de hoy es la seguridad de ellos mañana. ¡Díganle: "Mi esfuerzo es tu fuerza"!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(5 KC)** Vínculo Indestructible: Por realizar la visualización con respeto y entrega.</div>
+                        </li>
                     </ul>
                 </div>
-                <div class="content-bottom"><div class="timer-display">10:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(-1)">Ant</button><button class="nav-button" onclick="navigate(1)">Sig</button></div></div>
+                <div class="content-bottom">
+                    <div class="timer-display">15:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)">Siguiente</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="slide" data-duration="300">
             <div class="image-column">
                 <div class="image-column-wrapper">
-                    <div class="top-logo-placeholder"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
-                    <div class="image-guide"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                    <div class="top-logo-placeholder"><img src="https://i.imgur.com/7G8CoRs.png"></div>
+                    <div class="image-guide"><img src="https://i.imgur.com/yVwSmGQ.png"></div>
                     <div class="bottom-values-container">
                         <div class="value-line">
                             <span class="value-item"><span class="lider-letter">L</span>iderazgo</span>
@@ -256,66 +478,120 @@
                 </div>
             </div>
             <div class="content-column">
-                <div class="logo-placeholder" onclick="resetTimer()"><img src="PEGA_AQUÍ_TU_LINK_DE_IMGUR"></div>
+                <div class="logo-container"><div class="logo-placeholder" onclick="resetTimer()"><img src="https://i.imgur.com/nTLHMUv.png"></div></div>
                 <div class="main-content-wrapper">
                     <div class="content-header-area">
-                        <p class="phase-title">Fase 6: Despedida</p>
-                        <h3 class="activity-title">GRITO DE PODER</h3>
-                        <p class="group-name-display">FAMILIA KIDOM</p>
+                        <h2 class="phase-title">Fase 8 de 8: Cierre del Festival</h2>
+                        <h3 class="activity-title">POWER POSE FOTO</h3>
+                        <p class="group-name-display">KIDOM FEST 2026</p>
                     </div>
                     <ul class="instructions-list">
-                        <li><div class="list-title"><span class="list-icon">🛠️</span> Ejecución:</div><div class="list-text">Círculo final. Todos unidos por los hombros. Reconocimiento del esfuerzo mutuo.</div></li>
-                        <li><div class="list-title"><span class="list-icon">📢</span> Guion:</div><div class="list-text">"¡Mirada al frente! A la de tres: ¡FAMILIA KIDOM, FAMILIA FUERTE!"</div></li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">📢</span> <strong>Guion de Instrucción Rápida:</strong></div>
+                            <div class="list-text">¡Todos en pose de superhéroe! Carguen a sus hijos y resistan 1 minuto para la gran foto final. ¡Griten con orgullo: SOMOS KIDOM!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">💡</span> <strong>Lenguaje de Crecimiento/PNL:</strong></div>
+                            <div class="list-text">¡Esa es la postura de la victoria! Han superado 90 minutos de reto extremo. ¡Felicidades, campeones!</div>
+                        </li>
+                        <li>
+                            <div class="list-title"><span class="list-icon">🏆</span> <strong>Oportunidad KC:</strong></div>
+                            <div class="list-text">**(1 KC)** Grito Final: Por cerrar el festival con la mayor energía posible.</div>
+                        </li>
                     </ul>
                 </div>
-                <div class="content-bottom"><div class="timer-display">05:00</div><div class="navigation-buttons"><button class="nav-button" onclick="navigate(-1)">Ant</button></div></div>
+                <div class="content-bottom">
+                    <div class="timer-display">05:00</div>
+                    <div class="navigation-buttons">
+                        <button class="nav-button prevBtn" onclick="navigate(-1)">Anterior</button>
+                        <button class="nav-button nextBtn" onclick="navigate(1)" disabled>Finalizar</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+    </div> 
 
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
         let timerInterval = null;
 
         function formatTime(seconds) {
-            const m = Math.floor(seconds / 60);
-            const s = seconds % 60;
-            return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
         }
 
-        function startTimer(slide) {
-            if (timerInterval) clearInterval(timerInterval);
-            let timeLeft = parseInt(slide.dataset.duration);
-            const display = slide.querySelector('.timer-display');
-            display.textContent = formatTime(timeLeft);
-            timerInterval = setInterval(() => {
-                timeLeft--;
-                if (timeLeft >= 0) display.textContent = formatTime(timeLeft);
-                else { clearInterval(timerInterval); navigate(1); }
-            }, 1000);
+        function controlTimer(slideElement) {
+            clearInterval(timerInterval);
+            const duration = parseInt(slideElement.dataset.duration, 10);
+            const timerDisplay = slideElement.querySelector('.timer-display');
+            
+            if (!isNaN(duration) && timerDisplay) {
+                let timeLeft = duration;
+                timerDisplay.textContent = formatTime(timeLeft);
+                
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    if (timeLeft >= 0) {
+                        timerDisplay.textContent = formatTime(timeLeft);
+                    } else {
+                        clearInterval(timerInterval);
+                        timerDisplay.textContent = "00:00";
+                        navigate(1); 
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            const activeSlideElement = document.querySelector('.slide.active');
+            if (activeSlideElement) {
+                controlTimer(activeSlideElement); 
+            }
         }
 
         function showSlide(index) {
-            if (index < 0 || index >= slides.length) return;
-            slides.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
-            slides[index].classList.add('active');
-            slides[index].style.display = 'flex';
-            currentSlide = index;
-            startTimer(slides[index]);
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+            
+            if (slides[index]) {
+                slides[index].classList.add('active');
+                slides[index].style.display = 'flex';
+                currentSlide = index;
+                
+                slides.forEach((s, i) => {
+                    const prev = s.querySelector('.prevBtn');
+                    const next = s.querySelector('.nextBtn');
+                    if(prev) { prev.disabled = (i === 0); }
+                    if(next) { next.disabled = (i === totalSlides - 1); }
+                });
+
+                controlTimer(slides[currentSlide]);
+            }
         }
 
-        function navigate(dir) {
-            const next = currentSlide + dir;
-            if (next >= 0 && next < slides.length) showSlide(next);
+        function navigate(direction) {
+            const nextSlideIndex = currentSlide + direction;
+            if (nextSlideIndex >= 0 && nextSlideIndex < totalSlides) { 
+                showSlide(nextSlideIndex); 
+            }
         }
-
-        function resetTimer() { showSlide(currentSlide); }
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') navigate(1);
-            if (e.key === 'ArrowLeft') navigate(-1);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+             if (slides[0]) showSlide(0);
+             document.querySelectorAll('.logo-placeholder').forEach(element => {
+                element.addEventListener('click', resetTimer);
+            });
+             document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') navigate(1);
+                else if (e.key === 'ArrowLeft') navigate(-1);
+            });
         });
-        window.onload = () => showSlide(0);
     </script>
 </body>
 </html>
